@@ -86,7 +86,7 @@ public class Core {
         	manifestRAW = manifestRAW + inputLine;
         }
         in.close();
-        System.out.println(manifestRAW);
+        //System.out.println(manifestRAW);
         
         return manifestRAW;
 	}
@@ -96,14 +96,15 @@ public class Core {
 		
 		manifest = URLDecoder.decode(manifestRAW, "UTF-8");
 		manifest = URLDecoder.decode(manifest, "UTF-8");
+		System.out.println(manifest);
 		
+		int desde =manifest.indexOf("http://manifest.");
 		/*
-		int desde =manifest.indexOf("http://manifest")+15;
 		int from =manifest.indexOf("http://manifest");
 		int hasta = manifest.indexOf("&iurl", from);
 		*/
 		
-		manifest.substring(manifest.indexOf("http://manifest")+15, manifest.length());
+		manifest.substring(manifest.indexOf("http://manifest.googlevideo.com/api/manifest"), manifest.length());
 		
 		System.out.println("\n" + manifest);
 		return manifest;	
